@@ -3,7 +3,7 @@ import axios from "axios";
 const fetchDataFromAPI = async () => {
   try {
     const response = await axios.get(
-      "https://inverso-backend-temporal.onrender.com/api/items?populate=*&pagination[pageSize]=100"
+      "https://inverso-backend.onrender.com/api/items?populate=*&pagination[pageSize]=100"
     );
 
     // Sort items based on position
