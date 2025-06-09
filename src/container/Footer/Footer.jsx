@@ -18,8 +18,8 @@ const Footer = () => {
       <div className="app__footer-links">
         <div className="app__footer-links_contact">
           <h1 className="app__footer-headtext">Contact Us</h1>
-          <p className="p__opensans"><FiMapPin /> C. de Menorca, 19, 28009 Madrid</p>
-          <p className="p__opensans"><FiPhone /> +34 604827013</p>
+          <p className="p__opensans"><FiMapPin /> {data.Location}</p>
+          <p className="p__opensans"><FiPhone /> {data.Phone}</p>
       </div>
 
         <div className="app__footer-links_logo">
@@ -33,12 +33,12 @@ const Footer = () => {
 
         <div className="app__footer-links_work">
           <h1 className="app__footer-headtext">Nuestros Horarios</h1>
-          <p className="p__opensans">Martes - Miércoles - Jueves: </p>
-          <p className="p__opensans"> 15:00 - 00:30 </p>
-          <p className="p__opensans">Viernes - Sábado: </p>
-          <p className="p__opensans"> 13:30 - 01:30 </p>
-          <p className="p__opensans"> Domingo - Lunes: </p>
-          <p className="p__opensans"> Cerrado </p>
+          <p className="p__opensans">{data.OpenTime1Text}</p>
+          <p className="p__opensans">{data.OpenTime1Time}</p>
+          <p className="p__opensans">{data.OpenTime2Text}</p>
+          <p className="p__opensans">{data.OpenTime2Time}</p>
+          <p className="p__opensans">{data.OpenTime3Text}</p>
+          <p className="p__opensans">{data.OpenTime3Time}</p>
         </div>
       </div>
 
