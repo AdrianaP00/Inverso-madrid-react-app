@@ -30,12 +30,12 @@ const Footer = () => {
 
         <div className="app__footer-links_work">
           <h1 className="app__footer-headtext">Nuestros Horarios</h1>
-          <p className="p__opensans">Martes-Miércoles-Jueves: </p>
+          <p className="p__opensans">Martes - Miércoles - Jueves: </p>
           <p className="p__opensans"> 15:00 - 00:30 </p>
           <p className="p__opensans">Viernes - Sábado: </p>
           <p className="p__opensans"> 13:30 - 01:30 </p>
-          <p className="p__opensans"> Domingo: </p>
-          <p className="p__opensans"> 13:30 - 20:00 </p>
+          <p className="p__opensans"> Domingo - Lunes: </p>
+          <p className="p__opensans"> Cerrado </p>
         </div>
       </div>
 
