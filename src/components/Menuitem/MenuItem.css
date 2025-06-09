@@ -15,22 +15,9 @@
   width: 100%;
   margin-top: 0.2rem;
 }
-.app__menuitem-alergenics {
-  width: 100%;
-  margin-top: 0.2rem;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-content: flex-start;
-}
 
 .app__menuitem-sub img {
   width: 80%;
-}
-
-.app__menuitem-alergenics img {
-  object-fit: contain;
-  height: 20px;
 }
 
 .app__menuitem-name {

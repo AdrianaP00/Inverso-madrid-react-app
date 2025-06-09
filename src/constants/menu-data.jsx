@@ -6,47 +6,31 @@ const fetchDataFromAPI = async () => {
       "https://inverso-backend.onrender.com/api/items?populate=*&pagination[pageSize]=100"
     );
 
-    // Sort items based on position
+    // Sort items based on position, fallback to 0 if missing
     const sortedItems = response.data.data.sort(
-      (a, b) => a.Position - b.Position
+      (a, b) => (a.Position ?? 0) - (b.Position ?? 0)
     );
 
     return sortedItems.reduce((acc, item) => {
-      if (item.menu_section) {
-        const sectionKey = item.menu_section.key;
-
-        // If the sectionKey is not in the accumulator, initialize an array for it
+      const sectionKey = item.menu_section?.key;
+      if (sectionKey) {
         if (!acc[sectionKey]) {
           acc[sectionKey] = [];
         }
-
-        // Push the current item into the correct section array
         acc[sectionKey].push(item);
       }
       return acc;
     }, {});
   } catch (error) {
     console.error("Error fetching data:", error);
-    return null;
+    return {};
   }
 };
 
-const fetchAllData = async () => {
+const getMenuSections = async () => {
   const apiResponse = await fetchDataFromAPI();
   if (!apiResponse) return {};
-
-  return {
-    montanare: apiResponse.montanare,
-    tapas: apiResponse.tapas,
-    dolci: apiResponse.dolci,
-    cocktails: apiResponse.cocktails,
-    bebidas: apiResponse.bebidas,
-    vinosBlancos: apiResponse.vinosBlancos,
-    vinosRosado: apiResponse.vinosRosado,
-    vinosTintos: apiResponse.vinosTintos,
-    prosecco: apiResponse.prosecco,
-    caprichos: apiResponse.caprichos,
-  };
+  return apiResponse;
 };
 
-export default fetchAllData;
+export default getMenuSections;

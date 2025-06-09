@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FiInstagram, FiMapPin } from 'react-icons/fi';
 
-import { FooterOverlay, Newsletter, Modal } from '../../components';
+import { Newsletter, Modal } from '../../components';
 import { images } from '../../constants';
 import './Footer.css';
 
@@ -10,7 +10,6 @@ const Footer = () => {
 
   return (
     <div className="app__footer section__padding" id="login">
-      <FooterOverlay />
       <Newsletter />
 
       <div className="app__footer-links">

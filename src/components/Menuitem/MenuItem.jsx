@@ -1,17 +1,5 @@
 import React from "react";
-
 import "./MenuItem.css";
-import typeLogo from "../../constants/logos";
-
-const getTagsImg = (allergenics) =>
-  Object.values(allergenics).map((allergenic, index) => (
-    <img
-      id={index}
-      src={typeLogo.get(allergenic.Name)}
-      alt={allergenic}
-      loading="lazy"
-    />
-  ));
 
 const MenuItem = ({
   name,
@@ -21,7 +9,7 @@ const MenuItem = ({
   ingredients,
   allergenics,
 }) => (
-  <div className="app__menuitem ">
+  <div className="app__menuitem">
     <div className="app__menuitem-head">
       <div className="app__menuitem-name">
         {img && (
@@ -37,14 +25,14 @@ const MenuItem = ({
       </div>
       <div className="app__menuitem-price-box">
         {price &&
-          price.map((pr) => (
-            <>
+          price.map((pr, index) => (
+            <React.Fragment key={`${pr.Value}-${index}`}>
               <div className="app__menuitem-price">
                 <p className="p__cormorant">{pr.Value}</p>
                 {pr.Unit !== null && <p className="p__cormorant">/{pr.Unit}</p>}
               </div>
               <div className="app__menuitem-dash" />
-            </>
+            </React.Fragment>
           ))}
       </div>
     </div>
@@ -60,12 +48,6 @@ const MenuItem = ({
         <p className="p__opensans" style={{ color: "#AAAAAA" }}>
           {ingredients}
         </p>
-      </div>
-    )}
-
-    {allergenics && (
-      <div className="app__menuitem-alergenics" style={{ color: "#AAAAAA" }}>
-        {getTagsImg(allergenics)}
       </div>
     )}
   </div>
