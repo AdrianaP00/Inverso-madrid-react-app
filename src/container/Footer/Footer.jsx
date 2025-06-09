@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import { FiInstagram, FiMapPin } from 'react-icons/fi';
+import { FiInstagram, FiMapPin, FiPhone } from 'react-icons/fi';
 
 import { Newsletter, Modal } from '../../components';
 import { images } from '../../constants';
 import './Footer.css';
+import getSection from "../../services/getSection";
+
+const data = await getSection("footer-section");
 
 const Footer = () => {
   const [showModal, setShowModal] = useState(false);
@@ -15,8 +18,8 @@ const Footer = () => {
       <div className="app__footer-links">
         <div className="app__footer-links_contact">
           <h1 className="app__footer-headtext">Contact Us</h1>
-          <p className="p__opensans"><FiMapPin />C. de Menorca, 19, 28009 Madrid</p>
-          <p className="p__opensans">+34 604827013</p>
+          <p className="p__opensans"><FiMapPin /> C. de Menorca, 19, 28009 Madrid</p>
+          <p className="p__opensans"><FiPhone /> +34 604827013</p>
       </div>
 
         <div className="app__footer-links_logo">
