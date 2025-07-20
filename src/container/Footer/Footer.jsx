@@ -45,7 +45,7 @@ const Footer = () => {
 
       <div className="footer__copyright">
         <p className="p__opensans">inverso&nbsp;@2023  All Rights reserved.</p>
-        <p className="p__opensans">Created By <a href='https://github.com/AdrianaP00'>AdrianaP00.</a></p>
+        <p className="p__opensans">Created By <a href='https://github.com/Sojobo-tech'>Sojobo-tech.</a></p>
       </div>
       
       <div className="app">
